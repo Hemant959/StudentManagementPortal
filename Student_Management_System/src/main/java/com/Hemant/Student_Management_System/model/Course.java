@@ -1,8 +1,6 @@
 package com.Hemant.Student_Management_System.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +18,6 @@ public class Course {
     private String description;
     private String duration;
 
-    @ManyToMany
+    @ManyToMany( cascade = CascadeType.ALL)
     Set<Student>studentSet;
 }
